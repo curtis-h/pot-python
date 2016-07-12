@@ -10,7 +10,6 @@ app.controller('mainController', ['$scope', '$window', 'FlickrService', function
         $scope.limiter = Math.floor($window.innerWidth / 20);
         $scope.$apply();
     });
-
     
     // get the data from flickr and add to the scope
     Flickr.getData().then(function(data) {

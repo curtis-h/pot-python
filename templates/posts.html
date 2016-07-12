@@ -6,7 +6,7 @@
     </section>
     <section class="details">
         <h2>
-            {{ item.title | limitTo: limiter }}
+            <a data-ng-href="/post/{{ $index }}">{{ item.title | limitTo: limiter }}</a>
             <span data-ng-if="item.title.length > limiter">...</span>
         </h2>
         <p class="container">

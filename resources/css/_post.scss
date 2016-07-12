@@ -1,6 +1,15 @@
 .post {
     padding: 10px;
     
+    .title {
+        display: inline-block;
+        width: 70%;
+        
+        @include medium {
+            width: 85%;
+        }
+    }
+    
     .image {
         float: left;
         margin-right: 20px;

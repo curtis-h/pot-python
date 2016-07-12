@@ -7,8 +7,12 @@
         background-color: grey;
         float:            left;
         margin-right:     20px;
-        height:           130px;
-        max-width:        150px;
+        height:           85px;
+        width:            20%;
+        
+        @include medium {
+            height: 130px
+        }
        
         img {
             height:    auto;
@@ -20,31 +24,33 @@
     }
     
     .container {
+        margin-left: 20%;
+        
         .center {
             display: block;
         }
         
+        .left {
+            margin-right: 20px;
+        }
+        
         @include medium {
-            .container {
-                text-align: center;
-                
-                .left {
-                    float: left;
-                }
-                .right {
-                    float: right;
-                }
-                .center {
-                    display: inline-block;
-                    margin: 0 auto;
-                }
+            text-align: center;
+            
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
+            .center {
+                display: inline-block;
+                margin: 0 auto;
             }
         }
         
         @include large {
-            .container {
-                width: 70%;
-            }
+            width: 70%;
         }
     }
 }
