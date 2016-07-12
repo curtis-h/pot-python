@@ -10,7 +10,7 @@ app.service('FlickrService', ['$http', '$filter', function($http, $filter) {
      * make the data fit our needs
      */
     var transformPosts = function(data) {
-        var item = {
+        return {
             author:      data.author,
             authorLink:  data.link.split("/").slice(0, -2).join("/"),
             description: data.description,
@@ -20,9 +20,6 @@ app.service('FlickrService', ['$http', '$filter', function($http, $filter) {
             tags:        data.tags.split(" "),
             title:       data.title
         };
-        
-        console.log(item);
-        return item;
     };
     
     var mergePosts = function(newPosts) {
@@ -36,7 +33,6 @@ app.service('FlickrService', ['$http', '$filter', function($http, $filter) {
      * @return array - an array of flickr posts
      */
    var handleSuccess = function(response) {
-       console.log(response);
        return mergePosts(response.data.items);
    };
 
