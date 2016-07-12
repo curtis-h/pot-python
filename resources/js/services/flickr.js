@@ -15,6 +15,7 @@ app.service('FlickrService', ['$http', '$filter', function($http, $filter) {
             image:       data.media.m,
             link:        data.link,
             published:   $filter('date')(data.published, "d MMM yyyy 'at' H:mm"),
+            tags:        data.tags.split(" "),
             title:       data.title
         };
         

@@ -1,4 +1,4 @@
-<article class="listing" data-ng-repeat="item in feed">
+<article class="listing" data-ng-repeat="item in feed | filter:searchText">
     <section class="image">
         <a data-ng-href="/post/{{ $index }}">
             <img data-ng-src="{{ item.image }}" />

@@ -11,6 +11,8 @@
 <body data-ng-controller="mainController">
     <header>
         <h1>Flickr Public Feed</h1>
+        <strong>Filter:</strong>
+        <input type="text" data-ng-model="searchText.tags"></input>
     </header>
     <main data-ng-view></main>
 </body>
