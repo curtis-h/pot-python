@@ -3,7 +3,7 @@
  */
 app.service('FlickrService', ['$http', function($http) {
     // api url
-    var url   = '/flickr';
+    var url = '/flickr?callback=JSON_CALLBACK';
     
     /**
      * handle the response object gained from a successful ajax call
@@ -30,6 +30,6 @@ app.service('FlickrService', ['$http', function($http) {
      * handle the retrieval of data from flickr
      */
     this.getData = function() {
-        return $http.get(url).then(handleSuccess, handleError);
+        return $http.jsonp(url).then(handleSuccess, handleError);
     };
 }]);
