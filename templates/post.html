@@ -1,0 +1,22 @@
+<article class="post">
+    <header>
+        <h2>
+            <a data-ng-href="{{ item.link }}">{{ item.title }}</a>
+            <a href="/" class="back">Back</a>
+        </h2>
+        <p>
+            <a href="">{{ item.author }}</a>
+            |
+            Published: {{ item.published }}
+        </p>
+    </header>
+    <section class="image">
+        <img data-ng-src="{{ item.image }}" />
+    </section>
+    <section class="details">
+        <p>{{ item.description }}</p>
+        <br>
+        <strong>Tags:</strong>
+        <span class="tag" data-ng-repeat="tag in item.tags">{{ tag }}</span>
+    </section>
+</article>
