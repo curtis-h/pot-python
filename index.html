@@ -4,11 +4,28 @@
     <title>Potato task</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="static/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/main.css">
 </head>
 <body data-ng-controller="mainController">
     <header>
         <h1>Flickr Public Feed</h1>
     </header>
-    <main></main>
+    <main>
+        <article class="listing" data-ng-repeat="item in feed">
+            <section class="image">
+                <a data-ng-href="/post/{{ $index }}">
+                    <img data-ng-src="{{ item.image }}" />
+                </a>
+            </section>
+            <section class="details">
+                <h2>{{ item.title }}</h2>
+                <p class="container">
+                    <span class="center">Published: {{ item.published }}</span>
+                    <a class="left"  data-ng-href="{{ item.authorLink }}">{{ item.author }}</a>
+                    <a class="right" data-ng-href="{{ item.link }}">View on Flickr</a>
+                </p>
+            </section>
+        </article>
+    </main>
 </body>
 </html>
