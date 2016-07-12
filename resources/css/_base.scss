@@ -4,17 +4,17 @@
 }
 
 html, body {
-    font-size: 10px;
+    font-size: $fontSmall;
     height:    100%;
     margin:    0 auto;
     padding:   2%;
     
     @include small {
-        font-size: 12px;
+        font-size: $fontMedium;
     }
     
     @include medium {
-        font-size: 16px;
+        font-size: $fontLarge;
     }
 }
 

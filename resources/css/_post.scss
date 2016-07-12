@@ -28,11 +28,19 @@
         &:after {
             border-color: transparent black transparent transparent;
             border-style: solid;
-            border-width: 15px 10px 15px 0;
+            border-width: $fontSmall - 1 10px $fontSmall - 1 0;
             content:      "";
             position:     absolute;
             top:          0;
             left:         -11px;
+            
+            @include small {
+                border-width: $fontMedium - 1 10px $fontMedium - 1 0;
+            }
+            
+            @include medium {
+                border-width: $fontLarge - 1 10px $fontLarge - 2 0;
+            }
         }
     
         &:after {
