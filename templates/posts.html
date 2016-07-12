@@ -1,0 +1,18 @@
+<article class="listing" data-ng-repeat="item in feed">
+    <section class="image">
+        <a data-ng-href="/post/{{ $index }}">
+            <img data-ng-src="{{ item.image }}" />
+        </a>
+    </section>
+    <section class="details">
+        <h2>
+            {{ item.title | limitTo: limiter }}
+            <span data-ng-if="item.title.length > limiter">...</span>
+        </h2>
+        <p class="container">
+            <span class="center">Published: {{ item.published }}</span>
+            <a class="left"  data-ng-href="">{{ item.author }}</a>
+            <a class="right" data-ng-href="{{ item.link }}">View on Flickr</a>
+        </p>
+    </section>
+</article>

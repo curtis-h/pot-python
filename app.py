@@ -6,7 +6,13 @@ app = Flask(__name__)
 # base route for index file
 @app.route("/")
 def index():
-    return send_file("index.html")
+    return send_file("templates/index.html")
+    
+# get html templates for angular
+@app.route('/templates/<string:name>')
+def template(name):
+    return send_file("templates/"+ name +".html")
+
 
 # route to get flickr data
 @app.route("/flickr")
