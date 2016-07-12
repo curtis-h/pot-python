@@ -3,7 +3,7 @@
  */
 app.service('FlickrService', ['$http', function($http) {
     // api url
-    var url = "https://api.flickr.com/services/feeds/photos_public.gne";
+    var url   = '/flickr';
     
     /**
      * handle the response object gained from a successful ajax call
@@ -32,6 +32,4 @@ app.service('FlickrService', ['$http', function($http) {
     this.getData = function() {
         return $http.get(url).then(handleSuccess, handleError);
     };
-
-
 }]);
